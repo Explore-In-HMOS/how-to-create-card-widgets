@@ -1,0 +1,32 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "CardWidget"
+    },
+    {
+      "name": "MyModeFormAbility_desc",
+      "value": "form_description"
+    },
+    {
+      "name": "MyModeFormAbility_label",
+      "value": "form_label"
+    },
+    {
+      "name": "MyMode_desc",
+      "value": "Select your mode."
+    },
+    {
+      "name": "MyMode_display_name",
+      "value": "MyMode"
+    }
+  ]
+}
