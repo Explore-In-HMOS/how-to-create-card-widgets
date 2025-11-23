@@ -15,7 +15,6 @@ export default class MyModeFormAbility extends FormExtensionAbility {
     let formId: string = want.parameters[formInfo.FormParam.IDENTITY_KEY] as string;
 
     WidgetIdPrefs.addFormID(this.context, formId);
-    console.log('set form id', formId)
 
     const data: ModeData = { mode: ModePrefs.getMode(this.context) };
 

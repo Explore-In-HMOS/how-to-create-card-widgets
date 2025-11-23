@@ -17,7 +17,6 @@ export default class EntryAbility extends UIAbility {
     this.callee.on('changeMode', (data: rpc.MessageSequence) => {
       // Obtain all parameters passed in the call event.
       const dataObj: ModeData = JSON.parse(data.readString())
-      console.log('ModeData', JSON.stringify(dataObj), dataObj.mode);
 
       AppStorage.set('mode', dataObj.mode)
       ModePrefs.setMode(this.context, dataObj.mode);
