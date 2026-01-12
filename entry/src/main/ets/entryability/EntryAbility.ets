@@ -16,18 +16,18 @@ export default class EntryAbility extends UIAbility {
     // postCardAction 'call' is caught here
     this.callee.on('changeMode', (data: rpc.MessageSequence) => {
       // Obtain all parameters passed in the call event.
-      const dataObj: ModeData = JSON.parse(data.readString())
+      const dataObj: ModeData = JSON.parse(data.readString());
 
-      AppStorage.set('mode', dataObj.mode)
+      AppStorage.set('mode', dataObj.mode);
       ModePrefs.setMode(this.context, dataObj.mode);
-      vibrator.startVibration({ type: 'time', duration: 200 }, { usage: 'physicalFeedback' })
+      vibrator.startVibration({ type: 'time', duration: 200 }, { usage: 'physicalFeedback' });
       return new ModeParcelable(dataObj.mode);
     });
   }
 
   onDestroy(): void {
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onDestroy');
-    this.callee.off('changeMode')
+    this.callee.off('changeMode');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
@@ -41,9 +41,9 @@ export default class EntryAbility extends UIAbility {
       }
       hilog.info(DOMAIN, 'testTag', 'Succeeded in loading the content.');
 
-      const mode = ModePrefs.getMode(this.context)
-      PersistentStorage.persistProp('mode', mode)
-      AppStorage.set('mode', mode)
+      const mode = ModePrefs.getMode(this.context);
+      PersistentStorage.persistProp('mode', mode);
+      AppStorage.set('mode', mode);
     });
   }
 
@@ -54,11 +54,11 @@ export default class EntryAbility extends UIAbility {
 
   onForeground(): void {
     // Ability has brought to foreground
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onForeground' + ModePrefs.getMode(this.context));
+    hilog.info(DOMAIN, 'testTag', '%{public}s', `Ability onForeground ${ModePrefs.getMode(this.context)}`);
   }
 
   onBackground(): void {
     // Ability has back to background
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
   }
-}
+};
